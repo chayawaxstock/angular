@@ -50,5 +50,7 @@ export class RegisterComponent implements OnInit {
       this.registerForm.controls[name].setValue('');
       this.registerForm.controls[name].setErrors(null);
     }
+    this.registerForm.controls['isMale'].setValue(false);
+    this.submitted=false;
   }
 }
