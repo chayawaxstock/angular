@@ -6,11 +6,16 @@ import { Observable } from '../../../../node_modules/rxjs/Observable';
 @Injectable()
 export class PersonService {
 
+<<<<<<< HEAD
   basicURL = "http://localhost:3500/api";
+=======
+  baseUrl:string="localhost:3500/api/user";
+>>>>>>> 56d9df9a384f2889cd7563b196497dd1270aa853
   constructor(private http:HttpClient) {
   
    }
 
+<<<<<<< HEAD
 
    userList: Person[];
    getAllUsers(setUserList: (res) => void): void {
@@ -35,4 +40,11 @@ export class PersonService {
 
 
 
+=======
+   addPerson(person:Person): Observable<any> {
+    return this.http.post(this.baseUrl,person); 
+}
+
+
+>>>>>>> 56d9df9a384f2889cd7563b196497dd1270aa853
 }
