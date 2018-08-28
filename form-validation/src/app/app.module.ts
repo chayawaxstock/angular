@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PersonService } from './shared/service/person.service';
 //import { PersonService } from './shared/services/person.service';
 
 @NgModule({
@@ -15,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,  HttpClientModule,FormsModule, ReactiveFormsModule
   ],
-  providers: [],
+  providers: [PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

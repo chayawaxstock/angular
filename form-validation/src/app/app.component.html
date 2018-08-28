@@ -20,7 +20,8 @@
                       <input type="text" formControlName="tz" required class="form-control" [ngClass]="{ 'is-invalid':  f.tz.errors&&f.tz.dirty }" />
                       <div *ngIf=" f.tz.errors&&f.tz.dirty" class="invalid-feedback">
                            <div *ngIf="f.tz.errors.required">Tz is required</div> 
-                          <div *ngIf="f.tz.errors.maxlength||f.tz.errors.minlength">Tz must be only 8 characters</div>
+                           <div *ngIf="f.tz.errors.validTz">Tz is not correct</div> 
+                          <div *ngIf="f.tz.errors.maxlength||f.tz.errors.minlength">Tz must be only 9 characters</div>
                       </div>
                   </div>
 
@@ -38,8 +39,8 @@
                   <label>country</label>
                   <input type="text" formControlName="country" required class="form-control" [ngClass]="{ 'is-invalid':  f.country.errors&&f.country.dirty }" />
                   <div *ngIf=" f.country.errors&&f.country.dirty" class="invalid-feedback">
-                      <!-- <div *ngIf="f.country.errors.required">Tz is required</div>
-                      <div *ngIf="f.country.errors.minlength">Tz must be at least 8 characters</div> -->
+                       <div *ngIf="f.country.errors.required">country is required</div>
+                       <div *ngIf="f.country.errors.validCountry">cuntry dont found-not correct</div>
                   </div>
               </div>
 
@@ -47,8 +48,7 @@
                 <label>isMale</label>
                 <input id="isMale" type="checkbox" formControlName="isMale"  class="form-control" [ngClass]="{ 'is-invalid':  f.isMale.errors&&f.isMale.dirty }" />
                 <div *ngIf=" f.isMale.errors&&f.isMale.dirty" class="invalid-feedback">
-                    <!-- <div *ngIf="f.country.errors.required">Tz is required</div>
-                    <div *ngIf="f.country.errors.minlength">Tz must be at least 8 characters</div> -->
+                     <div *ngIf="f.isMale.errors.required">Tz is required</div>
                 </div>
             </div>
                   <div class="form-group">
