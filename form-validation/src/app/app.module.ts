@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PersonService } from './shared/service/person.service';
 import { PersonListComponent } from './component/person-list/person-list.component';
 import { RegisterComponent } from './component/register/register.component';
+
 //import { PersonService } from './shared/services/person.service';
 
 const appRoutes: Routes = [

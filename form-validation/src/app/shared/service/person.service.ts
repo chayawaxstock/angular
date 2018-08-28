@@ -24,11 +24,10 @@ export class PersonService {
   }
   //addPerson
   addPerson(person: Person): void {
-    debugger;
     let url: string = this.basicURL + "/user";
     this.http.post(url, person).subscribe(res => {
       alert("good")
-      
+
     },
       err => {
         alert("error");
