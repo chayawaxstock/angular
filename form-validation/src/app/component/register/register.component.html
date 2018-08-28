@@ -27,9 +27,9 @@
 
                   <div class="form-group">
                     <label>age</label>
-                    <input type="number" formControlName="age" required class="form-control" [ngClass]="{ 'is-invalid':f.age.errors&&submitted||f.age.touched&&f.age.errors }" />
+                    <input type="number" formControlName="age" required class="form-control"  [ngClass]="{ 'is-invalid':f.age.errors&&submitted||f.age.touched&&f.age.errors }" />
                     <div *ngIf=" f.age.errors&&submitted||f.age.touched&&f.age.errors" class="invalid-feedback">
-                        <div *ngIf="f.age.errors.required">age is required</div>
+                        <div *ngIf="f.age.errors.required">age is required</div> 
                         <div *ngIf="f.age.errors.min||f.age.errors.max">age must be between 0-120</div> 
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                 <div class="form-group">
                   <label>country</label>
                   <input type="text" formControlName="country" required class="form-control" [ngClass]="{ 'is-invalid':f.country.errors&&submitted||f.country.touched&&f.country.errors }" />
-                  <div *ngIf="f.country.errors&&submitted||f.country.touched " class="invalid-feedback">
+                  <div *ngIf="f.country.errors&&submitted||f.country.touched&&f.country.errors " class="invalid-feedback">
                        <div *ngIf="f.country.errors.required">country is required</div>
                        <div *ngIf="f.country.errors.validCountry">cuntry dont found-not correct</div>
                   </div>

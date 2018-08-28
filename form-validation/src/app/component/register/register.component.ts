@@ -13,34 +13,42 @@ import { ValidateTz } from '../../shared/validation/tz.validator';
 export class RegisterComponent implements OnInit {
 
   title = 'register';
-  submitted=false;
+  submitted = false;
   registerForm: FormGroup;
-    userList: Person[];
+  userList: Person[];
 
-  constructor(private formBuilder: FormBuilder,private personService:PersonService) { }
+  constructor(private formBuilder: FormBuilder, private personService: PersonService) { }
 
   ngOnInit() {
-      this.registerForm = this.formBuilder.group({
-          name: ['',[ Validators.required,Validators.minLength(3),Validators.maxLength(15)]],
-          tz: ['', [Validators.required, Validators.minLength(9),Validators.maxLength(9),ValidateTz]],
-          country:['',[Validators.required,ValidateCountry]],
-          age:['',[Validators.required,Validators.min(0),Validators.max(120)]],
-          isMale:['']
-      });
+    this.registerForm = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]],
+      tz: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(9), ValidateTz]],
+      country: ['', [Validators.required, ValidateCountry]],
+      age: ['', [Validators.required, Validators.min(0), Validators.max(120)]],
+      isMale: [false]
+    });
   }
 
   // convenience getter for easy access to form fields
   get f() { return this.registerForm.controls; }
 
   onSubmit() {
-      this.submitted=true;
-      // stop here if form is invalid
-      if (this.registerForm.invalid) {
-          return;
-      }
-      let person:Person=this.registerForm.value;
-      this.personService.addPerson(person);
-   
+    this.submitted = true;
+    // stop here if form is invalid
+    if (this.registerForm.invalid) {
+      return;
+    }
+    let person: Person = this.registerForm.value;
+    this.personService.addPerson(person);
+    this.reset();
 
+  }
+
+  //reset the form
+  reset() {
+    for (let name in this.registerForm.controls) {
+      this.registerForm.controls[name].setValue('');
+      this.registerForm.controls[name].setErrors(null);
+    }
   }
 }

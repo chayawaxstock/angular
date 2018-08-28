@@ -7,31 +7,33 @@ import { Observable } from '../../../../node_modules/rxjs/Observable';
 export class PersonService {
 
   basicURL = "http://localhost:3500/api";
-  constructor(private http:HttpClient) {
-  
-   }
+  constructor(private http: HttpClient) {
 
+  }
 
-   userList: Person[];
-   getAllUsers(setUserList: (res) => void): void {
-     let url: string = this.basicURL + "/getList";
-     this.http.get<Person[]>(url)
-       .subscribe(res => {
-         this.userList = res;
-         setUserList(this.userList);
-       });
- 
-   }
+  //getAllPerson
+  userList: Person[];
+  getAllUsers(setUserList: (res) => void): void {
+    let url: string = this.basicURL + "/getList";
+    this.http.get<Person[]>(url)
+      .subscribe(res => {
+        this.userList = res;
+        setUserList(this.userList);
+      });
 
-   addPerson(person:Person):void {
+  }
+  //addPerson
+  addPerson(person: Person): void {
+    debugger;
     let url: string = this.basicURL + "/user";
-    this.http.post(url,person).subscribe(res=>{
-       console.log(res);
+    this.http.post(url, person).subscribe(res => {
+      alert("good")
+      
     },
-  err=>{
-     console.log("error");
-  }); 
-}
+      err => {
+        alert("error");
+      });
+  }
 
 
 

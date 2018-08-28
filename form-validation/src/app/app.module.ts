@@ -10,6 +10,16 @@ import { PersonListComponent } from './component/person-list/person-list.compone
 import { RegisterComponent } from './component/register/register.component';
 //import { PersonService } from './shared/services/person.service';
 
+const appRoutes: Routes = [
+  { path: 'validation/personList', component: PersonListComponent },
+  { path: 'validation/register',component: RegisterComponent },
+  {
+    path: 'validation/',
+    component: RegisterComponent,
+  },
+];
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +28,7 @@ import { RegisterComponent } from './component/register/register.component';
  
   ],
   imports: [
-    BrowserModule,  HttpClientModule,FormsModule, ReactiveFormsModule
+    BrowserModule,  HttpClientModule,FormsModule, ReactiveFormsModule,RouterModule.forRoot( appRoutes)
   ],
   providers: [PersonService],
   bootstrap: [AppComponent]
