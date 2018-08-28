@@ -1,12 +1,12 @@
 
 
-*Form-validation-project
-**use ReactiveFormModule
+# Form-validation-project
+## use ReactiveFormModule
 
 
 
-###Code of this project
-#####\src\app\shared\models\person.model.ts:
+### Code of this project
+##### \src\app\shared\models\person.model.ts:
 ```typescript
 export interface Person{
 tz:string;
@@ -17,8 +17,8 @@ country:string;
 }
 ```
 
-#####\src\app\shared\models\tz.validation.ts:
-###### algoritim of tz validation
+##### \src\app\shared\models\tz.validation.ts:
+######  algoritim of tz validation
 ```typescript
 import { AbstractControl } from '@angular/forms';
 
@@ -38,7 +38,7 @@ export function ValidateTz(control: AbstractControl) {
 }
 ```
 
-#####\src\app\shared\models\country.validation.ts:
+##### \src\app\shared\models\country.validation.ts:
 ###### validation if country includes in array-countries
 ```typescript
 import { AbstractControl } from '@angular/forms';
@@ -50,7 +50,7 @@ export function ValidateCountry(control: AbstractControl) {
   return null;
 }
 ```
-#####\src\app\component\register.html:
+##### \src\app\component\register.html:
 ###### form- validation use with formGroup
 ```html
 <div class="jumbotron">
@@ -113,7 +113,7 @@ export function ValidateCountry(control: AbstractControl) {
 </div>
 
 ```
-#####\src\app\component\register.ts:
+##### \src\app\component\register.ts:
 ###### form- validation use with formGroup-formBuilder
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -174,7 +174,7 @@ export class RegisterComponent implements OnInit {
 }
 
 ```
-#####\src\app\component\person-list.ts:
+##### \src\app\component\person-list.ts:
 ###### get all people that add
 
 ```typescript
@@ -187,7 +187,7 @@ export class PersonListComponent implements OnInit {
 }
 ```
 
-#####\src\app\component\person-list.html:
+##### \src\app\component\person-list.html:
 ###### see all people that add
 
 ```html
@@ -202,7 +202,7 @@ export class PersonListComponent implements OnInit {
 </ol>
 
 ```
-#####\src\app\shared\services\person.service.ts:
+##### \src\app\shared\services\person.service.ts:
 ###### my provider
 ```typescript
 export class PersonService {
