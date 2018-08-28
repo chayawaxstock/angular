@@ -6,7 +6,7 @@ import { Observable } from '../../../../node_modules/rxjs/Observable';
 @Injectable()
 export class PersonService {
 
-  basicURL = "http://localhost:3500/api";
+  basicURL = "https://seldat-angular.herokuapp.com/api";
   constructor(private http: HttpClient) {
 
   }

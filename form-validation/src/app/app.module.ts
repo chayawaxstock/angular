@@ -15,7 +15,7 @@ const appRoutes: Routes = [
   { path: 'validation/personList', component: PersonListComponent },
   { path: 'validation/register',component: RegisterComponent },
   {
-    path: 'validation/',
+    path: '',
     component: RegisterComponent,
   },
 ];
